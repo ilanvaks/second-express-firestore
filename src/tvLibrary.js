@@ -18,4 +18,6 @@ export async function getallTv(req,res) {
     const tvshowList = collection.docs.map(
       tvshow => ( {... tvshow.data(), id: tvshow} )
     )
-}
+
+    res.status(201).send(tvshowList);
+  }
